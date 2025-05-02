@@ -36,12 +36,12 @@ Ruby CGIを使ってSAML認証の動きを確認！
 
 	2. IISの設定
 
-		ハンドラーマッピング > スクリプトマップの追加
+		ハンドラーマッピング > スクリプトマップの追加  
 		![](./image/IIS03.png)
 
-		要求パス : *.rb
-		実行可能ファイル : C:\...\bin\ruby.exe "%s" %s
-		名前 : Ruby CGI
+		要求パス : *.rb  
+		実行可能ファイル : C:\...\bin\ruby.exe "%s" %s  
+		名前 : Ruby CGI  
 		![](./image/IIS04.png)
 
 	3. 証明書
@@ -65,7 +65,9 @@ Ruby CGIを使ってSAML認証の動きを確認！
 		
 		4. サーバー証明書を作成
 
+			```bash
 			mkcert -pkcs12 ドメイン名 or IPアドレス  
+			```
 			※念のため拡張子をp12をpfxに変更
 		
 		5. 証明書のインポート
@@ -73,6 +75,7 @@ Ruby CGIを使ってSAML認証の動きを確認！
 			pfxをダブルクリック  
 			保存場所 : ローカルコンピュータ  
 			パスワード : changeit  
+
 			![](./image/IIS05.png)
 			![](./image/IIS06.png)
 			![](./image/IIS07.png)
@@ -85,6 +88,7 @@ Ruby CGIを使ってSAML認証の動きを確認！
 			certmgr.msc  
 			個人 : インポートした証明書をコピー  
 			信頼されたルート証明書機関 : コピーした証明書を貼り付け  
+
 			![](./image/IIS10.png)
 			![](./image/IIS11.png)
 
@@ -94,10 +98,12 @@ Ruby CGIを使ってSAML認証の動きを確認！
 			追加  
 			種類 : https  
 			SSL 証明書 : インストールした証明書  
+
 			![](./image/IIS12.png)
 			![](./image/IIS13.png)
 
 		8. クライアントPC
+
 			1. クライアントPCにrootCA.pemをrootCA.crtに名前を変更してコピー
 			2. クライアントPCでrootCA.crt をダブルクリック
 			3. 「証明書のインポート ウィザード」が開いたら進む
@@ -121,12 +127,15 @@ Ruby CGIを使ってSAML認証の動きを確認！
 
 	2. 独自のアプリケーション
 		1. 新しいアプリケーション
+
 			![](./image/entra02.png)
 
 		2. 独自のアプリケーションの作成
+
 			![](./image/entra03.png)
 
 		3. アプリの名前を設定して「作成」
+
 			![](./image/entra04.png)
 
 	3. シングル サインオンの設定
@@ -152,10 +161,12 @@ Ruby CGIを使ってSAML認証の動きを確認！
 	6. 証明書
 
 		![](./image/entra07.png)
+
 		SAML 証明書  
 		証明書 (Base64) > ダウンロード [証明書]  
 
 		![](./image/entra08.png)
+
 		ログインURL : コピーしておく [ログインURL]  
 		Microsoft Entra 識別子 : コピーしておく [Microsoft Entra 識別子]  
 
@@ -180,6 +191,7 @@ Ruby CGIを使ってSAML認証の動きを確認！
 		idp_entity_id : [Microsoft Entra 識別子]  
 		idp_sso_target_url : [ログインURL]  
 		idp_cert : [証明書]  
+
 		![](./image/ruby01.png)
 
 	3. 属性
