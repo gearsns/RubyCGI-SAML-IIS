@@ -1,7 +1,7 @@
 # IIS + Ruby CGIでEntraIDを使用してSAML認証
 
 ## 概要
-Ruby CGIを使ってSAML認証の動きを確認！
+Ruby CGIを使ってSAML認証の動きを確認！  
 使用しているライブラリ : ruby-saml
 
 ## 環境
@@ -55,7 +55,7 @@ Ruby CGIを使ってSAML認証の動きを確認！
 		2. CA証明書の作成および証明書ストアへのインストール
 
 			```bash
-			mkccert -install
+			mkcert -install
 			```
 		
 		3. CA証明書保存ディレクトリの確認
