@@ -2,6 +2,8 @@ require 'onelogin/ruby-saml'
 
 def saml_settings
   settings = OneLogin::RubySaml::Settings.new
+  # 権限が無かったら再認証
+  settings.force_authn = true
   # 自分のSP (Service Provider)側設定
   settings.assertion_consumer_service_url = "https://***/acs.rb"
   settings.issuer                         = "https://***/metadata"
